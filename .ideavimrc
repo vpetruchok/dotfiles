@@ -1,0 +1,15 @@
+set sw=2
+set ts=2
+set ic
+set incsearch
+set hls
+set number
+map Y y$
+set number
+set relativenumber
+set clipboard=unnamed
+
+noremap ,f :action ToggleFullScreen<cr>
+noremap ,d :action ToggleDistractionFreeMode<cr>
+noremap ,m :action ActivateMavenProjectsToolWindow<cr>
+noremap ,g :action ActivateGradleToolWindow<cr>
