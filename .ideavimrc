@@ -1,13 +1,13 @@
-set sw=2
-set ts=2
-set ic
+set shiftwidth=2
+set tabstop=2
+set ignorecase
 set incsearch
-set hls
-set number
-map Y y$
+set hlsearch
 set number
 set relativenumber
 set clipboard=unnamed
+
+noremap Y y$
 
 noremap ,f :action ToggleFullScreen<cr>
 noremap ,d :action ToggleDistractionFreeMode<cr>
