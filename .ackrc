@@ -1,0 +1,6 @@
+--color-filename=blue
+--color-lineno=bright_black
+--color-match=black on_cyan
+
+--ignore-dir=.idea/
+--ignore-dir=.gradle/
