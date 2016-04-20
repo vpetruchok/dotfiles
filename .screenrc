@@ -1,0 +1,27 @@
+# skip intro
+startup_message off
+ 
+# detach on disconnect
+autodetach on
+
+defscrollback 5000
+
+vbell off
+ 
+# window numbering starts at 1
+bind c screen 1
+bind 0 select 10
+screen 1
+
+# mapping alt+1...
+bindkey 1 select 1
+bindkey 2 select 2
+bindkey 3 select 3
+bindkey 4 select 4
+bindkey 5 select 5
+ 
+# Set the caption on the bottom line:
+# window-list <nowplaying> <mm/dd/yy> <HH:MM>am/pm
+# from http://diveintomark.org/public/2007/03/screenrc
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %1` %Y-%m-%d %c "
+
