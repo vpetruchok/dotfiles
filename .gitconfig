@@ -1,0 +1,42 @@
+[color]
+	ui = true
+
+[alias]
+	h = help
+
+	st = status 
+	s = "status -sb"
+
+	a = "add"
+	aa = "add --all :/"
+	ai = "add --interactive"
+	ap = "add --patch"
+
+	unstage = reset HEAD --
+	unadd = reset HEAD --
+
+	hide = update-index --assume-unchanged
+	unhide = update-index --no-assume-unchanged
+	ls-hidden = !git ls-files -v|grep '^h'
+
+	ci = commit
+
+	co = checkout
+
+	br = branch
+	b = branch
+
+	incoming = !(git fetch && git whatchanged ..@{u})
+	in = !(git fetch && git whatchanged ..@{u})
+
+	outgoing = whatchanged @{u}..
+	out = whatchanged @{u}..
+
+	f = fetch
+
+	l = log --oneline
+	lg = log --oneline --pretty=format:\"%C(auto)%h%C(reset)%C(blue)%d%C(reset) %s (%an %ad)\" --name-only --graph --date=relative
+	lg2 = log --oneline --decorate --all --graph
+
+	g = grep
+	ack = grep --break --heading --line-number
