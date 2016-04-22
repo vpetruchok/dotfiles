@@ -12,8 +12,8 @@
 	ai = "add --interactive"
 	ap = "add --patch"
 
-	unstage = reset HEAD --
 	unadd = reset HEAD --
+	unstage = reset HEAD --
 
 	hide = update-index --assume-unchanged
 	unhide = update-index --no-assume-unchanged
@@ -27,10 +27,10 @@
 	b = branch
 
 	incoming = !(git fetch && git whatchanged ..@{u})
-	in = !(git fetch && git whatchanged ..@{u})
+	in = !git incoming
 
 	outgoing = whatchanged @{u}..
-	out = whatchanged @{u}..
+	out = !git outgoing
 
 	f = fetch
 
@@ -40,3 +40,9 @@
 
 	g = grep
 	ack = grep --break --heading --line-number
+
+	d = diff
+	dt = difftool
+
+	m = merge
+	mt = mergetool
