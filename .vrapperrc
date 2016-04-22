@@ -1,0 +1,36 @@
+set shiftwidth=2
+set tabstop=2
+set ignorecase
+set incsearch
+set hlsearch
+set number
+set relativenumber
+set clipboard=unnamed
+
+nnoremap Y y$
+
+nnoremap <C-A-l> :nohls<cr>
+inoremap <C-A-l> <ESC>:nohls<cr>a
+
+" Eclipse actions
+" See https://github.com/vrapper/vrapper/wiki/Adding-key-bindings-to-commands
+
+eclipseuiaction ShowInfo org.eclipse.ui.edit.text.showInformation
+nnoremap K :ShowInfo<cr>
+
+eclipseaction AddBookmark org.eclipse.ui.edit.addBookmark
+nnoremap ,b :AddBookmark<cr>
+
+eclipseaction C org.eclipse.ui.project.cleanAction
+eclipseaction R org.eclipse.ui.file.restartWorkbench
+
+eclipseaction CQN org.eclipse.jdt.ui.edit.text.java.copy.qualified.name
+eclipseaction OQN org.eclipse.jdt.debug.ui.command.OpenFromClipboard
+eclipseaction OFC org.eclipse.jdt.debug.ui.command.OpenFromClipboard
+
+eclipseaction PageDown org.eclipse.ui.edit.text.goto.pageDown
+nnoremap <SPACE> :PageDown<cr>
+
+eclipseaction PageUp org.eclipse.ui.edit.text.goto.pageUp
+nnoremap <S-SPACE> :PageUp<cr>
+
