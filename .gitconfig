@@ -21,6 +21,8 @@
 
 	ci = commit
 
+	amend = commit --amend
+
 	co = checkout
 
 	br = branch
