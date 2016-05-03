@@ -1,0 +1,8 @@
+shell_patterns=0
+
+c      Copy fullpath to the clipboard
+       echo -n %d/%f | sed 's@/\.\.@@' | xsel --clipboard
+
+n      Copy filename to the clipboard
+       echo -n %f | xsel --clipboard
+
