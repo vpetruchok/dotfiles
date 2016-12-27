@@ -48,12 +48,32 @@
 	l = log --oneline
 	lg = log --oneline --pretty=format:\"%C(auto)%h%C(reset)%C(blue)%d%C(reset) %s (%an %ad)\" --name-only --graph --date=relative
 	lg2 = log --oneline --decorate --all --graph
+	ls = log --decorate --oneline
+	ll = log --decorate --numstat --format=fuller
 
 	g = grep
 	ack = grep --break --heading --line-number
 
 	d = diff
+	dplain = diff --word-diff=plain
 	dt = difftool
 
 	m = merge
 	mt = mergetool
+
+	cl = clone
+	flat = clone --depth 1
+	fl = !git flat
+	unflat = pull --unshallow
+	unshallow = !git unflat
+
+	initial = !git ci --allow-empty -m \"Initial commit (empty)\"  && git tag initial -m \"Initial tag (empty)\"
+
+	mkrepo = !git init && git initial && git aa && git ci
+
+[diff]
+	algorithm = patience
+
+	# Tell git diff to use mnemonic prefixes (i)ndex, (w)ork tree, (c)ommit, (o)bject
+	# instead of the standard "a/" and "b/" notation.
+	mnemonicprefix = true
