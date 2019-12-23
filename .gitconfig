@@ -24,9 +24,9 @@
 	unadd = reset HEAD --
 	unstage = reset HEAD --
 
-	hide = update-index --assume-unchanged
-	unhide = update-index --no-assume-unchanged
-	ls-hidden = !git ls-files -v|grep '^h'
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	ls-hidden = !git ls-files -v|grep '^[Sh]' # S - skip-noworktree , h - assume-unchanged
 
 	ci = commit
 
