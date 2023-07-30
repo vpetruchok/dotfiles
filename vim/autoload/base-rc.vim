@@ -1,13 +1,16 @@
 set shortmess=I  "disable Vim welcome screen
 "set vb t_vb=    "do not beep when error
 
+" Treat dash as part of a word
+set iskeyword+=-
+
 set backspace=indent,eol,start
 
 set wildmenu
 set wildmode=list:longest,full
 set wildignore=*.class,*.pyc
 
-"popup menu
+" Popup menu
 set completeopt=menu,preview
 
 "set expandtab
@@ -18,11 +21,12 @@ set splitright
 set autoindent
 set modeline
 
-"mouse 
+" Mouse
 set mouse=a      " mouse support in all modes
 set mousehide    " hide the mouse when typing text
 
-set relativenumber number
+set number
+"set relativenumber
 set ruler
 set showcmd
 
@@ -39,6 +43,27 @@ set hidden
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
+
+
+set clipboard=unnamed
+
+if has('unnamedplus')
+  set clipboard=unnamedplus
+endif
+
+
+" Showing trailing whitespaces
+
+set listchars=trail:·,tab:>→,nbsp:% ",eol:¶
+set list
+highlight ExtraWhitespace ctermbg=green ctermfg=blue guibg=green guifg=blue
+match ExtraWhitespace /\s\+$/
+
+fun! TrimRight()
+  %s/\v\S\zs\s+$//
+endfunction
+
+com! TrimRight :call TrimRight()
 
 
 if !exists("*SoVimrc")
