@@ -13,7 +13,7 @@
 [alias]
 	h = help
 
-	st = status 
+	st = status
 	s = "status -sb"
 
 	a = "add"
@@ -55,6 +55,7 @@
 	ack = grep --break --heading --line-number
 
 	d = diff
+	dc = diff --cached
 	dplain = diff --word-diff=plain
 	dt = difftool
 
@@ -70,6 +71,8 @@
 	initial = !git ci --allow-empty -m \"Initial commit (empty)\"  && git tag initial -m \"Initial tag (empty)\"
 
 	mkrepo = !git init && git initial && git aa && git ci
+
+	upd = "!f() { git add -A && git commit -m "Update"; } ; f"
 
 [diff]
 	algorithm = patience
