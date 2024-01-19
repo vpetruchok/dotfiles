@@ -1,8 +1,13 @@
 shell_patterns=0
 
-c      Copy fullpath to the clipboard
-       echo -n %d/%f | sed 's@/\.\.@@' | xsel --clipboard
+p   Copy file paths to the clipboard
+    printf '%%s\n' %s | xargs -n1 -I{} printf "%%s\n" "%d/{}" | xclip -rmlastnl -selection clipboard
 
-n      Copy filename to the clipboard
-       echo -n %f | xsel --clipboard
+P   Copy file paths to the clipboard (in quotes)
+    printf '%%s\n' %s | xargs -n1 -I{} printf "\"%%s\"\n" "%d/{}" | xclip -rmlastnl -selection clipboard
 
+n   Copy file names to the clipboard
+    printf "%%s\n" %s | xclip -rmlastnl -selection clipboard
+
+N   Copy file names to the clipboard (in quotes)
+    printf '"%%s"\n' %s | xclip -rmlastnl -selection clipboard
